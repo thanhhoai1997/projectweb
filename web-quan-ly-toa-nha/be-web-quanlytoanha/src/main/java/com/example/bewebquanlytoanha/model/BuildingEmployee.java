@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import java.util.Date;
 import java.util.List;
@@ -23,15 +25,16 @@ public class BuildingEmployee {
     private String phoneNumber;
     private String position;
     @ManyToOne
+    @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinColumn(name = "salary_id")
     private Salary salary;
 
-    @JsonBackReference
-    @OneToMany(mappedBy = "buildingEmployee",cascade = CascadeType.ALL)
-    private List<MonthlySalary> monthlySalaries;
-
-    @JsonBackReference
-    @OneToMany(mappedBy = "buildingEmployee",cascade = CascadeType.ALL)
-    private List<Word> words;
+//    @JsonBackReference
+//    @OneToMany(mappedBy = "buildingEmployee",cascade = CascadeType.ALL)
+//    private List<MonthlySalary> monthlySalaries;
+//
+//    @JsonBackReference
+//    @OneToMany(mappedBy = "buildingEmployee",cascade = CascadeType.ALL)
+//    private List<Word> words;
 
 }

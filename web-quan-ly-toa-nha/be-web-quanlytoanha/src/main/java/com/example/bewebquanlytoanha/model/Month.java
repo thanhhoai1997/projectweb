@@ -17,16 +17,16 @@ public class Month {
     private int month;
     private int year;
 
-    @JsonBackReference
-    @OneToMany(mappedBy = "month",cascade = CascadeType.ALL)
-    List<MonthlyFacilityBill> monthlyFacilityBills;
-
-    @JsonBackReference
-    @OneToMany(mappedBy = "month",cascade = CascadeType.ALL)
-    List<MonthlySalary> monthlySalaries;
-
-    @JsonBackReference
-    @OneToMany(mappedBy = "month",cascade = CascadeType.ALL)
-    List<MonthlyBill> monthlyBills;
+//    @JsonBackReference
+//    @OneToMany(mappedBy = "month",cascade = CascadeType.ALL)
+//    List<MonthlyFacilityBill> monthlyFacilityBills;
+//
+//    @JsonBackReference
+//    @OneToMany(mappedBy = "month",cascade = CascadeType.ALL)
+//    List<MonthlySalary> monthlySalaries;
+//
+//    @JsonBackReference
+//    @OneToMany(mappedBy = "month",cascade = CascadeType.ALL)
+//    List<MonthlyBill> monthlyBills;
 
 }

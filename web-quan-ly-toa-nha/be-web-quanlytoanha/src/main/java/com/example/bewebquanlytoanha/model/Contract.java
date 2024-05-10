@@ -4,6 +4,10 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import java.util.Date;
 import java.util.List;
@@ -24,14 +28,21 @@ public class Contract {
 
     @ManyToOne
     @JoinColumn(name = "company_id")
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private Company company;
 
     @ManyToOne
+
+    @OnDelete(action = OnDeleteAction.NO_ACTION)
     @JoinColumn(name = "floor_id")
     private Floor floor;
 
-    @JsonBackReference
-    @OneToMany(mappedBy = "contract",cascade = CascadeType.ALL)
-    private List<MonthlyBill> monthlyBills;
+//    @Column(columnDefinition = "bit(1) default 0")
+//    private Boolean isDeleted;
+
+
+//    @JsonBackReference
+//    @OneToMany(mappedBy = "contract",cascade = CascadeType.ALL)
+//    private List<MonthlyBill> monthlyBills;
 
 }

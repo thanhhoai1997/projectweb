@@ -3,6 +3,8 @@ package com.example.bewebquanlytoanha.model;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 @Data
 @Entity
@@ -21,9 +23,11 @@ public class MonthlySalary {
 
     @ManyToOne
     @JoinColumn(name = "building_employee_id")
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private BuildingEmployee buildingEmployee;
 
     @ManyToOne
     @JoinColumn(name = "month_name")
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private Month month;
 }

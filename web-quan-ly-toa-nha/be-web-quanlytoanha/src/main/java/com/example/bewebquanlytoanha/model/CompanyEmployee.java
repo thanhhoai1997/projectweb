@@ -3,6 +3,8 @@ package com.example.bewebquanlytoanha.model;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import java.util.Date;
 @Data
@@ -17,8 +19,9 @@ public class CompanyEmployee {
     private String name;
     private Date dateOfBirth;
     private String phoneNumber;
-    @ManyToOne
-    @JoinColumn(name = "company_id")
+    @ManyToOne(fetch = FetchType.LAZY,optional = false)
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    @JoinColumn(name = "company_id",nullable = false)
     private Company company;
 
 

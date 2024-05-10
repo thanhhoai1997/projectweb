@@ -18,12 +18,12 @@ public class Facility {
     private double price;
     private int required;
 
-    @JsonBackReference
-    @OneToMany(mappedBy = "facility",cascade = CascadeType.ALL)
-    private List<Salary> salaries;
-
-    @JsonBackReference
-    @OneToMany(mappedBy = "facility",cascade = CascadeType.ALL)
-    private List<FacilityContract> facilityContracts;
+//    @JsonBackReference
+//    @OneToMany(mappedBy = "facility",cascade = CascadeType.ALL)
+//    private List<Salary> salaries;
+//
+//    @JsonBackReference
+//    @OneToMany(mappedBy = "facility",cascade = CascadeType.ALL)
+//    private List<FacilityContract> facilityContracts;
 
 }

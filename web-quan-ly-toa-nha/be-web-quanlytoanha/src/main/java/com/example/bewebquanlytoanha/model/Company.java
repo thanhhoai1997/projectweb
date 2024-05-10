@@ -1,6 +1,7 @@
 package com.example.bewebquanlytoanha.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -20,18 +21,21 @@ public class Company {
     private String addressInBuilding;
     private String phoneNumber;
     private double area;
-    @JsonBackReference
-    @OneToMany(mappedBy = "company",cascade = CascadeType.ALL)
 
-    private List<CompanyEmployee> companyEmployees;
+//    @JsonBackReference
+//    @JsonIgnore
+//    @OneToMany(mappedBy = "company",cascade = CascadeType.ALL)
+//    private List<CompanyEmployee> companyEmployees;
 
 
-    @JsonBackReference
-    @OneToMany(mappedBy = "company",cascade = CascadeType.ALL)
-    private List<Contract> contracts;
-
-    @JsonBackReference
-    @OneToMany(mappedBy = "company",cascade = CascadeType.ALL)
-    private List<FacilityContract> facilityContracts;
+//    @JsonBackReference
+//    @JsonIgnore
+//    @OneToMany(mappedBy = "company",cascade = CascadeType.ALL)
+//    private List<Contract> contracts;
+//
+//    @JsonBackReference
+//    @JsonIgnore
+//    @OneToMany(mappedBy = "company",cascade = CascadeType.ALL)
+//    private List<FacilityContract> facilityContracts;
 
 }

@@ -21,7 +21,7 @@ public class Floor {
     private double groundArea;
 
 
-    @JsonBackReference
-    @OneToMany(mappedBy = "floor",cascade = CascadeType.ALL)
-    private List<Contract> contracts;
+//    @JsonBackReference
+//    @OneToMany(mappedBy = "floor",cascade = CascadeType.ALL)
+//    private List<Contract> contracts;
 }
